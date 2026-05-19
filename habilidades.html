@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades | Sofia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre mim</a>
+        <a href="habilidades.html">Habilidades</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <section class="habilidades">
+        <h1>Minhas Habilidades</h1>
+
+        <div id="menu-cards" class="cards-menu">
+            
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('front')">
+                <div class="card">
+                    <i class="fab fa-react icone-grande"></i>
+                    <h2>Front-end & UI</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('linguagens')">
+                <div class="card">
+                    <i class="fas fa-code icone-grande"></i>
+                    <h2>Linguagens Base</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('ferramentas')">
+                <div class="card">
+                    <i class="fas fa-tools icone-grande"></i>
+                    <h2>Build & Deploy</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('infra')">
+                <div class="card">
+                    <i class="fas fa-headset icone-grande"></i>
+                    <h2>Suporte e Infra</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('admin')">
+                <div class="card">
+                    <i class="fas fa-users-cog icone-grande"></i>
+                    <h2>Administração</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('bd')">
+                <div class="card">
+                    <i class="fas fa-database icone-grande"></i>
+                    <h2>Banco de Dados</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('uiux')">
+                <div class="card">
+                    <i class="fas fa-laptop-code icone-grande"></i>
+                    <h2>UI/UX e Web</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+            <div class="card-wrapper card-clicavel" onclick="mostrarDetalhes('soft')">
+                <div class="card">
+                    <i class="fas fa-lightbulb icone-grande"></i>
+                    <h2>Soft Skills</h2>
+                    <span class="dica-clique">Clique para expandir ➔</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="area-detalhes" class="oculto">
+            
+            <button class="btn-voltar" onclick="voltarMenu()">
+                <i class="fas fa-arrow-left"></i> Voltar para Habilidades
+            </button>
+
+            <div id="detalhe-front" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Ecossistema Front-end & UI</h2>
+                        <ul>
+                            <li><strong>React & Vite:</strong> Construção de interfaces dinâmicas, componentização e uso de ferramentas de build de alta velocidade.</li><br>
+                            <li><strong>Tailwind CSS & Shadcn/UI:</strong> Estilização moderna baseada em classes utilitárias e componentes prontos.</li><br>
+                            <li><strong>React Router Dom:</strong> Gerenciamento de rotas dinâmicas, permitindo navegação sem recarregar o navegador.</li><br>
+                            <li><strong>Bibliotecas de Interface:</strong> Experiência com Lucide React (ícones vetoriais) e Sonner (notificações em tela).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-linguagens" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Linguagens de Programação e Marcação</h2>
+                        <ul>
+                            <li><strong>Python:</strong> Fundamentos sólidos em lógica de programação. Capacidade de criar scripts básicos para automação e desenvolver servidores backend simples (como a API de e-mail deste portfólio).</li><br>
+                            <li><strong>TypeScript (TSX):</strong> Experiência prática inicial na estruturação de interfaces com React, utilizando tipagem básica para entender como prevenir bugs e organizar melhor o código.</li><br>
+                            <li><strong>HTML5 & CSS3:</strong> Compreensão prática de marcação estruturada e estilização visual. Capaz de construir layouts responsivos e aplicar designs modernos do zero.</li><br>
+                            <li><strong>JSON:</strong> Familiaridade com o formato para leitura de dados e configurações básicas de ambiente de projetos (como em arquivos package.json e vercel.json).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-ferramentas" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Ambiente, Build & Deploy</h2>
+                        <ul>
+                            <li><strong>Node.js:</strong> Experiência no uso do ambiente de execução e gerenciamento de pacotes (npm) para instalar e rodar bibliotecas.</li><br>
+                            <li><strong>Vercel CLI:</strong> Experiência prática em deploy de aplicações na nuvem e configuração de rotas via linha de comando.</li><br>
+                            <li><strong>Git e GitHub:</strong> Controle de versão para salvar projetos e organizar repositórios de código.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-infra" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Suporte e Infraestrutura</h2>
+                        <ul>
+                            <li><strong>Manutenção de Computadores:</strong> Experiência prática em montagem, diagnóstico e manutenção preventiva de hardware (limpeza, troca de pasta térmica, fontes e memórias). Formatação e configuração de sistemas Windows 10 e distribuições Linux (Xubuntu).</li><br>
+                            <li><strong>Suporte Técnico (N1/N2):</strong> Resolução de incidentes de TI, auxiliando usuários na instalação de impressoras em rede, configuração de certificados digitais, problemas em navegadores e instalação de softwares.</li><br>
+                            <li><strong>Gestão de Chamados:</strong> Utilização do sistema GLPI para administrar a abertura, acompanhamento e fechamento de chamados técnicos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-admin" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Administração de Sistemas</h2>
+                        <ul>
+                            <li><strong>Microsoft 365 Admin Center:</strong> Gerenciamento de ambiente corporativo, criação de usuários, atribuição de licenças, configuração de caixas de correio compartilhadas e criação de listas de distribuição.</li><br>
+                            <li><strong>Active Directory:</strong> Administração de identidades e acessos. Criação de novos usuários baseados em perfis espelhos (políticas de grupos) e desativação segura de contas inativas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-bd" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Banco de Dados</h2>
+                        <ul>
+                            <li><strong>Modelagem e Estruturação (MySQL):</strong> Conhecimento prático na criação de bancos de dados relacionais para projetos acadêmicos e ferramentas internas. Experiência na elaboração de Minimundo, Modelagem Entidade-Relacionamento (MER) e Modelagem Relacional (MR).</li><br>
+                            <li><strong>Desenvolvimento SQL:</strong> Capacidade de criar scripts DDL para estruturação de tabelas e DML para inserção e manipulação de dados. Conhecimento aplicado na extração de informações utilizando <code>JOINs</code>, <code>Subselects</code> e <code>Views</code>.</li><br>
+                            <li><strong>Regras de Negócio:</strong> Compreensão e aplicação inicial de <code>Procedures</code>, <code>Functions</code> e <code>Triggers</code> para automatizar rotinas e manter a integridade dos dados.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-uiux" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>UI/UX e Comunicação</h2>
+                        <ul>
+                            <li><strong>Prototipação (Figma):</strong> Criação de interfaces de usuário (UI) e protótipos navegáveis para estruturar a experiência do usuário (UX) antes do desenvolvimento do código.</li><br>
+                            <li><strong>Marketing Digital Corporativo:</strong> Criação de materiais gráficos e identidade visual utilizando Canva para redes sociais. Utilização de Inteligência Artificial (Prompt Engineering) para auxiliar no copywriting.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalhe-soft" class="card-detalhe oculto">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h2>Competências Profissionais</h2>
+                        <ul>
+                            <li><strong>Oratória e Apresentação Executiva:</strong> Responsável oficial por conduzir os pitches e defesas de todos os projetos acadêmicos e integradores (Viva+, MedCiclo, Sprig, Portal SENAC). Excelente capacidade de traduzir o lado técnico do código em valor de negócio para bancas avaliadoras e clientes.</li><br>
+                            <li><strong>Liderança e Trabalho em Equipe:</strong> Experiência na liderança e engajamento de equipes (ex: gestão de um squad de 10 pessoas na Residência Tecnológica do Porto Digital), promovendo a colaboração mútua.</li><br>
+                            <li><strong>Resolução de Problemas:</strong> Capacidade de analisar cenários complexos e propor soluções eficientes para incidentes e otimização de processos, aliando visão de desenvolvimento e infraestrutura.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Sofia. Desenvolvido com 💜 e muito código.</p>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarDetalhes(idCategoria) {
+            document.getElementById('menu-cards').classList.add('oculto');
+            document.getElementById('area-detalhes').classList.remove('oculto');
+            
+            let todosDetalhes = document.querySelectorAll('.card-detalhe');
+            todosDetalhes.forEach(detalhe => detalhe.classList.add('oculto'));
+            
+            document.getElementById('detalhe-' + idCategoria).classList.remove('oculto');
+        }
+
+        function voltarMenu() {
+            document.getElementById('area-detalhes').classList.add('oculto');
+            document.getElementById('menu-cards').classList.remove('oculto');
+        }
+    </script>
+</body>
+</html>

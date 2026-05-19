@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sofia | Contato</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre mim</a>
+            <a href="habilidades.html">Habilidades</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <section class="pagina-contato">
+            <h1>Vamos conversar?</h1>
+            <p class="subtitulo-contato">
+                Tem alguma dúvida, uma proposta de projeto ou quer apenas dar um oi? Preencha o formulário abaixo e sua mensagem chegará direto na minha caixa de entrada. Responderei o mais rápido possível!
+            </p>
+            <form action="http://localhost:5000/enviar" method="POST" class="form-centralizado">
+                <div class="input-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Seu E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Ex: joao@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn-neon">Enviar Mensagem</button>
+            </form>
+        </section>
+            <footer>
+                <div class="footer-content">
+                    <div class="social-links">
+                        <a href="mailto:s.leitaoazevedo@gmail.com" target="_blank" title="Enviar E-mail">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/sofia-azeved0" target="_blank" title="Meu GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sofialeitaodeazevedo/" target="_blank" title="Meu LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <p>&copy; 2026 Sofia. Desenvolvido com 💜 e muito código.</p>
+                </div>
+            </footer>
+            <script>
+                window.addEventListener('pageshow', function() {
+                document.querySelector('.form-centralizado').reset();
+                });
+            </script>
+    </body>
+</html>

@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis Globais (Tema Dark Neon) */
+:root {
+    --bg-dark: #0a0a16;
+    --bg-card: rgba(30, 41, 59, 0.7);
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --neon-pink: #ff4da6; 
+    --neon-purple: #b366ff; 
+    --footer-bg: rgba(10, 10, 22, 0.9);
+}
+
+/* Configurações Base */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-dark) 60%);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+/* Navegação */
+nav {
+    background: rgba(10, 10, 22, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 77, 166, 0.2);
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px rgba(255, 77, 166, 0.5);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--neon-pink);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Layout Estrutural */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, var(--neon-pink), var(--neon-purple));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Hero Section (index.html) */
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.saudacao {
+    color: var(--neon-pink);
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: -10px;
+}
+
+.nome-destaque {
+    font-size: 4.5rem;
+    margin: 10px 0;
+    color: var(--text-light);
+    text-shadow: 0 0 20px rgba(255, 77, 166, 0.4);
+}
+
+.cargo {
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-neon {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: var(--neon-pink);
+    border: 2px solid var(--neon-pink);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+.btn-neon:hover {
+    background: var(--neon-pink);
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 77, 166, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Sobre Mim */
+.sobre-linha {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.texto {
+    flex: 1;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.texto p {
+    margin-bottom: 20px;
+}
+
+.foto-container {
+    position: relative;
+}
+
+.foto {
+    width: 280px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s;
+    filter: grayscale(20%);
+}
+
+.foto:hover {
+    transform: scale(1.02);
+    filter: grayscale(0%);
+}
+
+.foto-container::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+    z-index: 1;
+    border-radius: 25px;
+    opacity: 0.6;
+    filter: blur(20px);
+    transition: 0.4s;
+}
+
+/* Componente Card Base */
+.cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-wrapper {
+    position: relative;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255,77,166,0.2), rgba(179,102,255,0.2));
+    transition: 0.4s;
+    display: flex;
+}
+
+.card-wrapper:hover {
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255, 77, 166, 0.5);
+}
+
+.card {
+    background: var(--bg-dark);
+    padding: 30px;
+    border-radius: 14px;
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+    z-index: 1;
+    color: var(--text-muted);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card h2 {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 20px;
+    line-height: 2;
+}
+
+.card li::marker {
+    color: var(--neon-pink);
+}
+
+/* Grid de Menu Interativo (Habilidades) */
+.cards-menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+.cards-menu .card-wrapper {
+    min-width: 0;
+}
+
+.cards-menu .card {
+    min-width: 0;
+    padding: 30px 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-clicavel {
+    cursor: pointer;
+}
+
+.cards-menu .card-clicavel h2 {
+    font-size: 1rem;
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    word-break: break-word;
+}
+
+.icone-grande {
+    font-size: 2.5rem;
+    color: var(--neon-pink);
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card-clicavel:hover .icone-grande {
+    color: var(--neon-purple);
+    transform: scale(1.1);
+}
+
+.dica-clique {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.card-clicavel:hover .dica-clique {
+    opacity: 1;
+}
+
+.btn-voltar {
+    background: transparent;
+    border: 1px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.btn-voltar:hover {
+    background: var(--neon-pink);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.4);
+}
+
+.card-detalhe {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Controle de Visibilidade JS */
+.oculto, #menu-cards.oculto {
+    display: none !important;
+}
+
+/* Projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.projeto-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+    backdrop-filter: blur(5px);
+}
+
+.projeto-card:hover {
+    border-color: var(--neon-purple);
+    box-shadow: 0 10px 30px rgba(179, 102, 255, 0.2);
+    transform: translateY(-10px);
+}
+
+.projeto-card h2 {
+    color: var(--neon-pink);
+    margin-bottom: 5px;
+    border-bottom: none;
+}
+
+.projeto-card h4 {
+    color: var(--neon-purple);
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tag {
+    background: rgba(255, 77, 166, 0.1);
+    color: var(--neon-pink);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 77, 166, 0.3);
+}
+
+/* Rodapé */
+footer {
+    background: var(--footer-bg);
+    border-top: 1px solid rgba(179, 102, 255, 0.2);
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--neon-pink);
+    background: rgba(255, 77, 166, 0.1);
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.5);
+    transform: translateY(-5px);
+}
+
+.footer-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Animações (Typing Effect) */
+.digitando {
+    display: inline-block;
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: 3px solid var(--neon-pink); 
+    margin: 0 auto; 
+    /* Coloquei o 'forwards' para a animação terminar e ficar parada perfeitamente */
+    animation: 
+        typing 3s steps(24, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+/* Animação das letras aparecendo */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 21ch; } /* 'ch' é a medida exata de caracteres! */
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--neon-pink); }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .cards-menu {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .sobre-linha {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- PÁGINA DE CONTATO EXCLUSIVA --- */
+.pagina-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo no meio da tela */
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+}
+
+.subtitulo-contato {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.form-centralizado {
+    width: 100%;
+    max-width: 550px; /* Impede o form de ficar muito largo e feio */
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 77, 166, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-centralizado .input-group {
+    text-align: left; /* Mantém os títulos dos campos à esquerda */
+}
+
+.form-centralizado input,
+.form-centralizado textarea {
+    width: 100%;
+    box-sizing: border-box; /* Impede que a borda "empurre" o campo pra fora */
+    background: rgba(10, 10, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-centralizado input:focus,
+.form-centralizado textarea:focus {
+    outline: none;
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.3);
+    background: rgba(10, 10, 22, 0.9);
+}
+
+.form-centralizado .btn-neon {
+    margin-top: 15px;
+    width: 100%;
+}

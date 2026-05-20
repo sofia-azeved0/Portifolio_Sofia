@@ -20,7 +20,7 @@ Bem-vindo(a) ao repositório do meu portfólio! Desenvolvi este projeto para apr
   * `Projetos`: Galeria com os trabalhos desenvolvidos.
   * `Contato`: Links diretos para minhas redes (LinkedIn, GitHub) e E-mail.
 
-## Sobre a Desenvolvedora
+## Sobre mim
 Sou a Sofia, tenho 18 anos e estou no 3º período de Análise e Desenvolvimento de Sistemas. Desde sempre tive curiosidade sobre como a tecnologia funciona por trás das telas. Meu foco é entender não apenas como construir aplicações, mas dominar a lógica e a estrutura da web, sempre criando novos projetos para colocar a mão na massa. Quando não estou programando, estou ouvindo rock ou lendo um bom livro de romance.
 
 ---

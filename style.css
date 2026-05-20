@@ -440,7 +440,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* ---- AJUSTES DO MENU (Rolagem Horizontal) ---- */
     nav, .menu, header ul {
         display: flex;
         flex-wrap: nowrap;
@@ -479,6 +478,37 @@ footer {
     .card {
         width: 100%;
         margin: 0;
+    }
+
+    .sobre-mim-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .sobre-mim-texto {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .sobre-mim-texto p {
+        font-size: 16px;
+        line-height: 1.6;
+        width: 90%;
+        margin: 0 auto 15px auto;
+    }
+
+    .sobre-mim-foto img {
+        width: 80%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
     }
 }
 
@@ -541,4 +571,35 @@ footer {
 .form-centralizado .btn-neon {
     margin-top: 15px;
     width: 100%;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 50px;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.redes-sociais i {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.redes-sociais a:hover i {
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+}
+
+footer p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
 }

@@ -442,10 +442,17 @@ footer {
 @media (max-width: 768px) {
     nav, .menu, header ul {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px 5px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 10px 15px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar, .menu::-webkit-scrollbar, header ul::-webkit-scrollbar {
+        display: none;
     }
 
     nav a, .menu a, header a {

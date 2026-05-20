@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Variáveis Globais (Tema Dark Neon) */
 :root {
     --bg-dark: #0a0a16;
     --bg-card: rgba(30, 41, 59, 0.7);
@@ -11,7 +10,6 @@
     --footer-bg: rgba(10, 10, 22, 0.9);
 }
 
-/* Configurações Base */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -21,7 +19,6 @@ body {
     min-height: 100vh;
 }
 
-/* Navegação */
 nav {
     background: rgba(10, 10, 22, 0.8);
     backdrop-filter: blur(10px);
@@ -67,7 +64,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Layout Estrutural */
 section {
     max-width: 1100px;
     margin: auto;
@@ -89,7 +85,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* Hero Section (index.html) */
 .hero {
     text-align: center;
     display: flex;
@@ -140,7 +135,6 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* Sobre Mim */
 .sobre-linha {
     display: flex;
     align-items: center;
@@ -187,7 +181,6 @@ h1 {
     transition: 0.4s;
 }
 
-/* Componente Card Base */
 .cards {
     display: flex;
     gap: 30px;
@@ -239,7 +232,6 @@ h1 {
     color: var(--neon-pink);
 }
 
-/* Grid de Menu Interativo (Habilidades) */
 .cards-menu {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -323,12 +315,10 @@ h1 {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Controle de Visibilidade JS */
 .oculto, #menu-cards.oculto {
     display: none !important;
 }
 
-/* Projetos */
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -379,7 +369,6 @@ h1 {
     border: 1px solid rgba(255, 77, 166, 0.3);
 }
 
-/* Rodapé */
 footer {
     background: var(--footer-bg);
     border-top: 1px solid rgba(179, 102, 255, 0.2);
@@ -428,47 +417,48 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Animações (Typing Effect) */
 .digitando {
     display: inline-block;
     overflow: hidden; 
     white-space: nowrap; 
     border-right: 3px solid var(--neon-pink); 
     margin: 0 auto; 
-    /* Coloquei o 'forwards' para a animação terminar e ficar parada perfeitamente */
+
     animation: 
         typing 3s steps(24, end) forwards,
         blink-caret .75s step-end infinite;
 }
 
-/* Animação das letras aparecendo */
 @keyframes typing {
     from { width: 0; }
-    to { width: 21ch; } /* 'ch' é a medida exata de caracteres! */
+    to { width: 21ch; }
 }
 
-/* Animação do cursor piscando */
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: var(--neon-pink); }
 }
 
-/* Responsividade */
-@media (max-width: 900px) {
-    .cards-menu {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+@media (max-width: 768px) {
+    nav, .menu, header ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 5px;
     }
-    .sobre-linha {
-        flex-direction: column;
-        text-align: center;
+
+    nav a, .menu a, header a {
+        font-size: 13px;
+        padding: 6px 8px;
+        white-space: nowrap;
     }
 }
 
-/* --- PÁGINA DE CONTATO EXCLUSIVA --- */
 .pagina-contato {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza tudo no meio da tela */
+    align-items: center;
     justify-content: center;
     min-height: 70vh;
     text-align: center;
@@ -483,7 +473,7 @@ footer {
 
 .form-centralizado {
     width: 100%;
-    max-width: 550px; /* Impede o form de ficar muito largo e feio */
+    max-width: 550px;
     background: var(--bg-card);
     backdrop-filter: blur(10px);
     padding: 40px;
@@ -496,13 +486,13 @@ footer {
 }
 
 .form-centralizado .input-group {
-    text-align: left; /* Mantém os títulos dos campos à esquerda */
+    text-align: left;
 }
 
 .form-centralizado input,
 .form-centralizado textarea {
     width: 100%;
-    box-sizing: border-box; /* Impede que a borda "empurre" o campo pra fora */
+    box-sizing: border-box;
     background: rgba(10, 10, 22, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px;

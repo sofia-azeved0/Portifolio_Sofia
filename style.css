@@ -514,7 +514,7 @@ footer {
         height: auto;
         border-radius: 20px;
         border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 2px 1px #ff007f, 0 0 4px 1px rgba(255, 0, 127, 0.2) !important;
+        box-shadow: 0 0 2px 1px #ff007f, 0 0 4px 1px rgba(255, 0, 127, 0.2);
         margin: 0 auto;
     }
 
@@ -524,7 +524,7 @@ footer {
         height: auto;
         border-radius: 20px;
         border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 3px 1px rgba(255, 0, 127, 0.3) !important;
+        box-shadow: 0 0 2px 1px rgba(255, 0, 127, 0.2);
         margin: 0 auto;
     }
 }

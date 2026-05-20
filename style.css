@@ -521,8 +521,7 @@ footer {
         height: auto;
         border-radius: 20px;
         border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 15px 3px rgba(255, 0, 127, 0.4);
-
+        box-shadow: 0 0 10px 1px rgba(255, 0, 127, 0.2);
         margin: 0 auto;
     }
 }

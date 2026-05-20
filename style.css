@@ -521,7 +521,7 @@ footer {
         height: auto;
         border-radius: 20px;
         border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 10px 1px rgba(255, 0, 127, 0.2);
+        box-shadow: 0 0 3px 1px rgba(255, 0, 127, 0.3) !important;
         margin: 0 auto;
     }
 }
@@ -615,8 +615,8 @@ footer {
 }
 
 .social-links a:hover i {
-    color: #ff007f;
-    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    color: #df2381;
+    text-shadow: 0 0 10px #df2381, 0 0 20px #df2381;
 }
 
 footer p {

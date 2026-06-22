@@ -2,18 +2,17 @@ from flask import Flask, request
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 app = Flask(__name__)
 
 MEU_EMAIL = "s.leitaoazevedo@gmail.com" 
 MINHA_SENHA_APP = "qkuq mkgv xebw tjfc"
 
-# --- NOVA ROTA: Resolve o Erro 404 da página inicial ---
 @app.route('/', methods=['GET'])
 def pagina_inicial():
     return "<h1>Servidor Online! 🚀</h1><p>O servidor de e-mails da Sofia está funcionando perfeitamente. Conexão estabelecida.</p>"
 
-# --- ROTA DO FORMULÁRIO ---
 @app.route('/enviar', methods=['POST', 'GET'])
 def receber_contato():
     if request.method == 'GET':
@@ -115,4 +114,5 @@ def receber_contato():
         return f"<h2>Puxa! Ocorreu um erro no servidor ao tentar enviar a mensagem.</h2><p>{e}</p>"
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

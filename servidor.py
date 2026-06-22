@@ -6,15 +6,19 @@ from email.mime.multipart import MIMEMultipart
 app = Flask(__name__)
 
 MEU_EMAIL = "s.leitaoazevedo@gmail.com" 
-MINHA_SENHA_APP = "qkuq mkgv xebw tjfc" # Dica de segurança: como você compartilhou essa senha, o ideal é gerar uma nova lá no Google depois! 😉
+MINHA_SENHA_APP = "qkuq mkgv xebw tjfc"
 
+# --- NOVA ROTA: Resolve o Erro 404 da página inicial ---
+@app.route('/', methods=['GET'])
+def pagina_inicial():
+    return "<h1>Servidor Online! 🚀</h1><p>O servidor de e-mails da Sofia está funcionando perfeitamente. Conexão estabelecida.</p>"
+
+# --- ROTA DO FORMULÁRIO ---
 @app.route('/enviar', methods=['POST', 'GET'])
 def receber_contato():
-    # 1. Trata o caso de você acessar o link diretamente no navegador (GET)
     if request.method == 'GET':
-        return "<h1>Servidor Online! 🚀</h1><p>O servidor está funcionando perfeitamente. Para testar o e-mail, volte ao seu portfólio e envie pelo formulário.</p>"
+        return "<h1>Rota de Envio Ativa ✉️</h1><p>Esta rota está pronta para receber as mensagens do seu portfólio.</p>"
 
-    # 2. Trata o envio real do formulário (POST)
     nome = request.form.get('nome', 'Visitante')
     email_remetente = request.form.get('email', 'Não informado')
     mensagem_texto = request.form.get('mensagem', '')
@@ -29,14 +33,13 @@ def receber_contato():
 
     try:
         servidor_smtp = smtplib.SMTP('smtp.gmail.com', 587)
-        servidor_smtp.starttls() # Liga a segurança
+        servidor_smtp.starttls()
         servidor_smtp.login(MEU_EMAIL, MINHA_SENHA_APP)
         servidor_smtp.send_message(msg)
         servidor_smtp.quit()
         
         print(f"Sucesso! E-mail de {nome} enviado para a sua caixa de entrada.")
 
-        # Nova tela de sucesso combinando com o design Editorial Clean!
         return f"""
         <!DOCTYPE html>
         <html lang="pt_BR">

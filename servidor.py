@@ -3,6 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
+import traceback # <-- Nova biblioteca para rastrear o erro exato!
 
 app = Flask(__name__)
 
@@ -11,34 +12,33 @@ MINHA_SENHA_APP = "qkuq mkgv xebw tjfc"
 
 @app.route('/', methods=['GET'])
 def pagina_inicial():
-    return "<h1>Servidor Online! 🚀</h1><p>O servidor de e-mails da Sofia está funcionando perfeitamente. Conexão estabelecida.</p>"
+    return "<h1>Servidor Online! 🚀</h1><p>O servidor de e-mails da Sofia está a funcionar perfeitamente.</p>"
 
 @app.route('/enviar', methods=['POST', 'GET'])
 def receber_contato():
-    if request.method == 'GET':
-        return "<h1>Rota de Envio Ativa ✉️</h1><p>Esta rota está pronta para receber as mensagens do seu portfólio.</p>"
-
-    nome = request.form.get('nome', 'Visitante')
-    email_remetente = request.form.get('email', 'Não informado')
-    mensagem_texto = request.form.get('mensagem', '')
-
-    msg = MIMEMultipart()
-    msg['From'] = MEU_EMAIL
-    msg['To'] = MEU_EMAIL
-    msg['Subject'] = f"Novo Contato do Portfólio de: {nome}"
-
-    corpo_email = f"Você recebeu uma nova mensagem do seu site!\n\nNome: {nome}\nE-mail de contato: {email_remetente}\n\nMensagem:\n{mensagem_texto}"
-    msg.attach(MIMEText(corpo_email, 'plain', 'utf-8'))
-
+    # Envolvemos absolutamente TUDO num bloco de teste
     try:
+        if request.method == 'GET':
+            return "<h1>Rota de Envio Ativa ✉️</h1><p>Esta rota está pronta para receber as mensagens do seu portefólio.</p>"
+
+        nome = request.form.get('nome', 'Visitante')
+        email_remetente = request.form.get('email', 'Não informado')
+        mensagem_texto = request.form.get('mensagem', '')
+
+        msg = MIMEMultipart()
+        msg['From'] = MEU_EMAIL
+        msg['To'] = MEU_EMAIL
+        msg['Subject'] = f"Novo Contato do Portfólio de: {nome}"
+
+        corpo_email = f"Recebeu uma nova mensagem do seu site!\n\nNome: {nome}\nE-mail de contacto: {email_remetente}\n\nMensagem:\n{mensagem_texto}"
+        msg.attach(MIMEText(corpo_email, 'plain', 'utf-8'))
+
         servidor_smtp = smtplib.SMTP('smtp.gmail.com', 587)
         servidor_smtp.starttls()
         servidor_smtp.login(MEU_EMAIL, MINHA_SENHA_APP)
         servidor_smtp.send_message(msg)
         servidor_smtp.quit()
         
-        print(f"Sucesso! E-mail de {nome} enviado para a sua caixa de entrada.")
-
         return f"""
         <!DOCTYPE html>
         <html lang="pt_BR">
@@ -102,16 +102,16 @@ def receber_contato():
         <body>
             <div class="card-sucesso">
                 <h2>Obrigada, {nome}!</h2>
-                <p>Sua mensagem foi enviada diretamente para o meu e-mail com sucesso. Retornarei o mais breve possível.</p>
-                <a href="javascript:history.back()" class="btn-voltar">Voltar para o Portfólio</a>
+                <p>A sua mensagem foi enviada diretamente para o meu e-mail com sucesso. Retornarei o mais breve possível.</p>
+                <a href="javascript:history.back()" class="btn-voltar">Voltar para o Portefólio</a>
             </div>
         </body>
         </html>
         """
-
     except Exception as e:
-        print(f"Erro ao enviar e-mail: {e}")
-        return f"<h2>Puxa! Ocorreu um erro no servidor ao tentar enviar a mensagem.</h2><p>{e}</p>"
+        # Se QUALQUER erro acontecer, mostramos no ecrã em vez de dar o Internal Server Error!
+        erro_completo = traceback.format_exc()
+        return f"<h2>Puxa! O código Python quebrou.</h2><p>Aqui está o erro exato para partilhar comigo:</p><pre style='text-align: left; background: #eee; padding: 15px; border-radius: 10px; font-size: 13px; color: #d9534f; overflow-x: auto;'>{erro_completo}</pre>"
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
